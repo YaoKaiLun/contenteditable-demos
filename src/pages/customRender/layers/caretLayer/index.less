@@ -1,0 +1,24 @@
+.caret-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+
+  .caret {
+    position: absolute;
+    width: 0px;
+    font-size: 0px;
+    border-left: 1.2px solid red;
+    color: rgb(57, 57, 57);
+    height: 20px;
+    animation: 1s blinkAnimation step-end infinite;
+  }
+}
+
+@keyframes blinkAnimation {
+  50% {
+    border-color: transparent;
+  }
+}
