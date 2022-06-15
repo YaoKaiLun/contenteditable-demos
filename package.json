@@ -2,9 +2,7 @@
   "name": "contenteditable",
   "version": "1.0.0",
   "scripts": {
-    "start": "parcel",
-    "watch": "parcel start",
-    "build": "parcel build"
+    "start": "parcel"
   },
   "license": "MIT",
   "source": "src/index.html",

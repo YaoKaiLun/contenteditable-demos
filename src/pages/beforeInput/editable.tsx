@@ -9,6 +9,8 @@ export default function Editable() {
 
   const onDOMBeforeInput = useCallback((event: InputEvent) => {
     const { inputType } = event;
+    console.log('inputType', inputType);
+
     const data = (event as any).dataTransfer || event.data || undefined;
 
     if (!selection) {
@@ -53,6 +55,7 @@ export default function Editable() {
 
   const onDOMSelectionChange = useCallback(throttle(() => {
       const domSelection = document.getSelection();
+      console.log('onDOMSelectionChange', domSelection);
 
       if (!domSelection) {
         setSelection(null);

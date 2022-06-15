@@ -12,9 +12,10 @@ export function useMutationObserver(node: RefObject<HTMLElement>, callback) {
   const [mutationObserver] = useState(() => new MutationObserver((mutations: MutationRecord[]) => {
     let newContent = '';
     mutations.forEach(mutation => {
+      console.log('mutation', mutation);
+
       switch (mutation.type) {
         case 'characterData': {
-          // console.log('mutation', mutation);
           const target = mutation.target;
           const oldValue = mutation.oldValue;
           newContent = target.textContent;

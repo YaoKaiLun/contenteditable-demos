@@ -13,6 +13,8 @@ export default function Editable() {
     setContent(newContent);
 
     if (diff) {
+      console.log('diff', diff);
+
       let offset = newContent.length;
 
       if (diff.insertText.length > 0) {
@@ -29,7 +31,7 @@ export default function Editable() {
 
   const onDOMSelectionChange = useCallback(throttle(() => {
     const domSelection = document.getSelection();
-    console.log('onDOMSelectionChange', domSelection);
+    // console.log('onDOMSelectionChange', domSelection);
 
     if (!domSelection) {
       setSelection(null);
@@ -70,7 +72,6 @@ export default function Editable() {
         }
       }
 
-      console.log('selection', selection);
       try {
         const textNode = ref.current.childNodes[0];
         var range = document.createRange();
